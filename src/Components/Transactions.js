@@ -40,7 +40,7 @@ const Transactions = () => {
       });
   }, [transactions]);
 
-  const total = transactions.map(({ amount }) => amount * 1).reduce((a, b) => a + b, 0) || 0;
+  const total = transactions.map(({ amount }) => amount * 1).reduce((a, b) => a + b, 0);
 
   const checkTotal = () => {
     if (total && total < 0) {
