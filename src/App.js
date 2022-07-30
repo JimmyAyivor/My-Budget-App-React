@@ -10,7 +10,7 @@ import NewTransaction from "./Pages/newTransaction";
 import ShowTransaction from "./Pages/showTransaction";
 
 // COMPONENTS
-import { Card, CardContent, Grid } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import NavBar from "./Components/navBar";
 import { Container } from "@mui/system";

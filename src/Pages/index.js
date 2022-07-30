@@ -1,7 +1,6 @@
 import React from "react";
 import Transactions from "../Components/Transactions";
 import { Typography } from "@mui/material";
-import Paper from "@mui/material/Paper";
 
 const index = () => {
   return (
