@@ -1,5 +1,5 @@
 body{
-  background-color: gainsboro ;
+  background-color: #f0eff4 !important;
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
  }
 main {
   width: 90%;
-  margin: auto;
+  margin: 30px auto;
 }
 
 a {
