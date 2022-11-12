@@ -7,8 +7,9 @@ const home = () => {
       {" "}
       Welcome to My Budgeting App{" "}
     </Typography>
-<Typography variant='p'>A Budgeting App to create, update, and delete budget transactions such as income, taxes, expenses and savings etc…</Typography>
-<Typography variant='p'>Built with HTML, CSS, JavaScript,Node.js, React, Express, Material UI with  backend deployed on Heroku and frontend on Netlify.</Typography>
+<Typography variant='p' justifyContent='center'>A Budgeting App to create, update, and delete budget transactions such as income, taxes, expenses and savings etc…</Typography>
+<br>
+<Typography variant='p' justifyContent='center'>Built with HTML, CSS, JavaScript,Node.js, React, Express, Material UI with  backend deployed on Heroku and frontend on Netlify.</Typography>
 </>
   );
 };
