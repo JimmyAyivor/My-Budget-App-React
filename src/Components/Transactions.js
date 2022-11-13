@@ -81,7 +81,7 @@ const Transactions = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {transactions.index ? transactions.map((transaction, index) => {
+            {total ? transactions.map((transaction, index) => {
               return (
                 <Transaction
                   key={index}

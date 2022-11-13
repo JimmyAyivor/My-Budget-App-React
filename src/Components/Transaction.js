@@ -34,7 +34,7 @@ const transactionTable = ( <TableRow hover role='checkbox' tabIndex={-1} key={in
     </TableRow>)
   
   return (<>
-  {transaction && transactionTable}
+  {transactionTable}
    </>);
 };
 
