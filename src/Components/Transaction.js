@@ -17,9 +17,7 @@ const Transaction = ({ transaction, index, row }) => {
       .then((response) => navigate(`/transactions`))
       .catch((error) => console.transaction(error));
   };
-
-  return (
-    <TableRow hover role='checkbox' tabIndex={-1} key={index}>
+const trasctionTable = ( <TableRow hover role='checkbox' tabIndex={-1} key={index}>
       <TableCell>
         <Link to={`/transactions/${index}/edit`}>
           <Button endIcon={<EditIcon />}></Button>
@@ -33,7 +31,9 @@ const Transaction = ({ transaction, index, row }) => {
         <Link to={`/transactions/${index}`}>{transaction.item_name}</Link>
       </TableCell>
       <TableCell align='right'>{transaction.amount}</TableCell>
-    </TableRow>
+    </TableRow>)
+  return ({trasaction ? trasctionTable : <Typography>No trasaction found<Typography>}
+   
   );
 };
 
