@@ -81,7 +81,7 @@ const Transactions = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {transactions.map((transaction, index) => {
+            {transactions.index ? transactions.map((transaction, index) => {
               return (
                 <Transaction
                   key={index}
@@ -89,7 +89,9 @@ const Transactions = () => {
                   index={index}
                 />
               );
-            })}
+            }): <Typography variant='p' m={2} align='center' gutterBottom component='div'>
+          No transactions found!
+          </Typography>}
           </TableBody>
         </Table>
       </TableContainer>
