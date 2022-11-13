@@ -32,9 +32,9 @@ const transactionTable = ( <TableRow hover role='checkbox' tabIndex={-1} key={in
       </TableCell>
       <TableCell align='right'>{transaction.amount}</TableCell>
     </TableRow>)
-  return ({row ? transactionTable : 'No transactions found'}
+  return (<>{row ? transactionTable : 'No transactions found'}
    
-  );
+  </>);
 };
 
 export default Transaction;
