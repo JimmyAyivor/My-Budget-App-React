@@ -12,13 +12,16 @@ import { Box, Typography } from "@mui/material";
 const API = process.env.REACT_APP_API_URL;
 
 const columns = [
-  { id: "actions", label: "Actions", minWidth: 170 },
-  { id: "date", label: "Date", minWidth: 170 },
+  { id: "actions", label: "Actions", minWidth: 100 },
+  { id: "date", label: "Date", minWidth: 100 },
+  { id: "name", label: "Name", minWidth: 100 },
   { id: "from", label: "From", minWidth: 100 },
+  { id: "category", label: "Category", minWidth: 100 },
+
   {
     id: "amount",
     label: "Amount",
-    minWidth: 170,
+    minWidth: 100,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },

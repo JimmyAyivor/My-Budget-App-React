@@ -39,11 +39,9 @@ const TransactionNewForm = () => {
     getCategories()
   }, [])
 
-  console.log(transaction);
 
   const handleTextChange = (event) => {
     setTransaction({ ...transaction, [event.target.id]: event.target.value ,[event.target.name]: event.target.value});
-    console.log(event.target.value);
   };
 
   const handleSubmit = (event) => {

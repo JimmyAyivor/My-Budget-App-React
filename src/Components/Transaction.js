@@ -9,6 +9,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 const Transaction = ({ transaction, index, row }) => {
+  const {date, item_name, from, amount, category } = transaction
   const navigate = useNavigate();
 
   const handleDelete = () => {
@@ -26,11 +27,17 @@ const transactionTable = ( <TableRow hover role='checkbox' tabIndex={-1} key={in
           <Button onClick={handleDelete} endIcon={<DeleteIcon />}></Button>
         </Link>
       </TableCell>
-      <TableCell>{transaction.date}</TableCell>
+      <TableCell>{date}</TableCell>
       <TableCell>
-        <Link to={`/transactions/${index}`}>{transaction.item_name}</Link>
+        <Link to={`/transactions/${index}`}>{item_name}</Link>
       </TableCell>
-      <TableCell align='right'>{transaction.amount}</TableCell>
+      <TableCell>
+        <Link to={`/transactions/${index}`}>{from}</Link>
+      </TableCell>
+      <TableCell>
+        <Link to={`/transactions/${index}`}>{category}</Link>
+      </TableCell>
+      <TableCell align='right'>{amount}</TableCell>
     </TableRow>)
   
   return (<>

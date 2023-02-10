@@ -24,7 +24,7 @@ function App() {
           <div>
             <Container>
               <Card
-                style={{ maxWidth: 750, margin:"25px auto", padding: "20px 5px" }}
+                style={{ maxWidth: 850, margin:"25px auto", padding: "20px 5px" }}
               >
                 <CardContent>
                   <Routes>
