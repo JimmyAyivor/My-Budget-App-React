@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-import { Grid, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Grid, InputLabel, MenuItem, Select } from "@mui/material";
 const API = process.env.REACT_APP_API_URL;
 const TransactionNewForm = () => {
   const [transaction, setTransaction] = useState({
