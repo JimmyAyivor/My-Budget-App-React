@@ -1,10 +1,10 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-import { Grid } from "@mui/material";
+import { Grid, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 const API = process.env.REACT_APP_API_URL;
 const TransactionNewForm = () => {
   const [transaction, setTransaction] = useState({
@@ -14,8 +14,19 @@ const TransactionNewForm = () => {
     from: "",
     category: "",
   });
+  const [categories, setCategories] = useState([]);
 
   const navigate = useNavigate();
+  const getCategories = () => {
+    axios
+      .get(`${API}/categories`)
+      .then((res) => setCategories(res.data))
+      .catch((error) => console.transaction(error));
+  };
+
+
+
+
 
   const addTransaction = () => {
     axios
@@ -24,8 +35,15 @@ const TransactionNewForm = () => {
       .catch((error) => console.transaction(error));
   };
 
+  useEffect(() => {
+    getCategories()
+  }, [])
+
+  console.log(transaction);
+
   const handleTextChange = (event) => {
-    setTransaction({ ...transaction, [event.target.id]: event.target.value });
+    setTransaction({ ...transaction, [event.target.id]: event.target.value ,[event.target.name]: event.target.value});
+    console.log(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -67,9 +85,7 @@ const TransactionNewForm = () => {
             margin='dense'
             required
             id='date'
-            label='Date'
-            type='text'
-            placeholder='Date'
+            type='date'
             value={transaction.date}
             onChange={handleTextChange}
             fullWidth
@@ -89,24 +105,25 @@ const TransactionNewForm = () => {
           />
         </Grid>
         <Grid xs={12} item>
-          <TextField
-            margin='dense'
-            label='Category'
-            id='category'
-            type='text'
-            name='category'
-            onChange={handleTextChange}
+        <InputLabel id='category'>Category</InputLabel>
+
+          <Select
+            name="category"
+            id="category"
             value={transaction.category}
             fullWidth
-          />
+            labelId="category"
+            label="Category"
+            onChange={handleTextChange}
+          >
 
-          {
-            //TODO - Implement Categogy > Select fountionality
-            /* {categories.map((category) => (
-                <MenuItem value={category}>{category}</MenuItem>
-              ))}
-            </Select> */
-          }
+
+            {categories.map(({ id, categoryName }) => (
+              <MenuItem key={id} value={categoryName}>{categoryName}</MenuItem>
+            ))}
+
+          </Select>
+
         </Grid>
         <Grid xs={12} item>
           <Button

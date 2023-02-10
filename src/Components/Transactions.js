@@ -89,9 +89,7 @@ const Transactions = () => {
                   index={index}
                 />
               );
-            }): <Typography variant='p' m={2} align='center' gutterBottom component='div'>
-          No transactions found!
-          </Typography>}
+            }): <tr><td>No transactions found!</td></tr>}
           </TableBody>
         </Table>
       </TableContainer>
