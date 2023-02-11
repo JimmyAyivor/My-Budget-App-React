@@ -1,10 +1,10 @@
-body{
+body {
   background-color: #f0eff4 !important;
 }
 
 nav {
   background-color: #832161;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,10 +12,12 @@ nav {
   box-shadow: 2px 2px 4px grey;
   margin-bottom: 1em;
 }
- nav a{
+
+nav a {
   color: #000;
   font-weight: 600;
- }
+}
+
 main {
   width: 90%;
   margin: 30px auto;
@@ -56,11 +58,20 @@ tbody tr:nth-child(even) {
   width: 95%;
 }
 
+
+
 input[type],
 textarea {
   display: block;
   width: 90%;
-  margin: auto;
+}
+
+.TopSearch input[type],
+textarea {
+  display: flex;
+  justify-content: flex-start;
+  width: 25%;
+  height: 30px;
 }
 
 input[type="checkbox"] {
@@ -72,12 +83,13 @@ input[type="submit"] {
   width: 30%;
 }
 
-.Show{
+.Show {
   margin: auto 50px;
   padding: 20px;
-  background-color:#F0EFF4;
+  background-color: #F0EFF4;
 
 }
+
 .showNavigation {
   display: flex;
   justify-content: space-around;

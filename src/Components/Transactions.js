@@ -31,6 +31,27 @@ const Transactions = () => {
   const [transactions, setTransactions] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  let filteredTransaction = transactions;
+
+  if (searchInput) {
+
+    filteredTransaction = transactions.filter((transaction) => {
+
+      const { date, item_name, from, amount, category } = transaction
+
+      return date.toLowerCase().includes(searchInput.toLowerCase()) ||
+        item_name.toLowerCase().includes(searchInput.toLowerCase()) ||
+        from.toLowerCase().includes(searchInput.toLowerCase()) ||
+        category.toLowerCase().includes(searchInput.toLowerCase()) ||
+        amount.toLowerCase().includes(searchInput.toLowerCase());
+    });
+  }
 
   useEffect(() => {
     axios
@@ -65,6 +86,13 @@ const Transactions = () => {
 
   return (
     <Box mt={2} sx={{ width: "100%", overflow: "hidden" }}>
+      <div className="TopSearch">
+        <input
+          value={searchInput}
+          type="text"
+          placeholder="Search by name"
+          onChange={handleChange}
+        /></div>
       <Typography variant='h6' m={2} align='right' gutterBottom component='div'>
         Bank Account Total: {checkTotal()}
       </Typography>
@@ -84,7 +112,7 @@ const Transactions = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {total ? transactions.map((transaction, index) => {
+            {total ? filteredTransaction.map((transaction, index) => {
               return (
                 <Transaction
                   key={index}
@@ -92,7 +120,7 @@ const Transactions = () => {
                   index={index}
                 />
               );
-            }): <tr><td>No transactions found!</td></tr>}
+            }) : <tr><td>No transactions found!</td></tr>}
           </TableBody>
         </Table>
       </TableContainer>

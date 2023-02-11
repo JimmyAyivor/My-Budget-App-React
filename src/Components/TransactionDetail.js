@@ -30,29 +30,29 @@ const TransactionDetail = () => {
   };
 
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={1} alignSelf='center'>
       <Grid xs={12} item>
-        <Typography align='center' mt={2} variant='subtitle1'>
+        <Typography align='left' mt={2} variant='subtitle1'>
           <strong> Name:</strong> {transaction.item_name}
         </Typography>
       </Grid>
       <Grid xs={12} item>
-        <Typography align='center' variant='subtitle1'>
+        <Typography align='left' variant='subtitle1'>
           <strong>Amount:</strong> {transaction.amount}
         </Typography>
       </Grid>
       <Grid xs={12} item>
-        <Typography align='center' variant='subtitle1'>
+        <Typography align='left' variant='subtitle1'>
           <strong> Date:</strong> {transaction.date}
         </Typography>
       </Grid>
       <Grid xs={12} item>
-        <Typography align='center' variant='subtitle1'>
+        <Typography align='left' variant='subtitle1'>
           <strong>From:</strong> {transaction.from}
         </Typography>
       </Grid>
       <Grid xs={12} mb={3} item>
-        <Typography align='center' variant='subtitle1'>
+        <Typography align='left' variant='subtitle1'>
           <strong>Category:</strong> {transaction.category}
         </Typography>
       </Grid>
