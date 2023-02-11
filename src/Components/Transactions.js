@@ -112,7 +112,7 @@ const Transactions = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {total ? filteredTransaction.map((transaction, index) => {
+            {filteredTransaction.length > 0 ? filteredTransaction.map((transaction, index) => {
               return (
                 <Transaction
                   key={index}
