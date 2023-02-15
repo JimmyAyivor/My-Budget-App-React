@@ -120,7 +120,7 @@ const Transactions = () => {
                   index={index}
                 />
               );
-            }) : <tr><td style={{textAlign:"center"}}>No transactions found!</td></tr>}
+            }) : <tr><td style={{textAlign:"center"}}>No transaction found!</td></tr>}
           </TableBody>
         </Table>
       </TableContainer>
