@@ -90,7 +90,7 @@ const Transactions = () => {
         <input
           value={searchInput}
           type="text"
-          placeholder="Search by name"
+          placeholder="Search by name category amount"
           onChange={handleChange}
         /></div>
       <Typography variant='h6' m={2} align='right' gutterBottom component='div'>
@@ -127,7 +127,7 @@ const Transactions = () => {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component='div'
-        count={transactions.length}
+        count={filteredTransaction.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
