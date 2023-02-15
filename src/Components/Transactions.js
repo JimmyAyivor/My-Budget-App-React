@@ -90,7 +90,7 @@ const Transactions = () => {
         <input
           value={searchInput}
           type="text"
-          placeholder="Search..."
+          placeholder="Search transaction"
           onChange={handleChange}
         /></div>
       <Typography variant='h6' m={2} align='right' gutterBottom component='div'>
@@ -120,7 +120,7 @@ const Transactions = () => {
                   index={index}
                 />
               );
-            }) : <tr><td style={{textAlign:"center"}}>No transaction found!</td></tr>}
+            }) : <tr><td style={{textAlign:"center"}} colSpan='6'>No transaction found!</td></tr>}
           </TableBody>
         </Table>
       </TableContainer>
