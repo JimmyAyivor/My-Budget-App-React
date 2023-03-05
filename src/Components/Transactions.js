@@ -90,7 +90,7 @@ const Transactions = () => {
         <input
           value={searchInput}
           type="text"
-          placeholder="Search... "
+          placeholder="Search..."
           onChange={handleChange}
         /></div>
       <Typography variant='h6' m={2} align='right' gutterBottom component='div'>
